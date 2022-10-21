@@ -25,7 +25,7 @@ public class UserServiceTest {
                 .when().get(Constant.baseUrl+"/user/1");
         user=response.then().extract().as(User.class);
         System.out.print(user);
-       // Assert.assertEquals("Status code not 400",response.statusCode(),400);
+        Assert.assertEquals("Status code not 400",response.statusCode(),400);
         Assert.assertNotEquals("Wrong name",user.getUsername(),username);
     }
 
